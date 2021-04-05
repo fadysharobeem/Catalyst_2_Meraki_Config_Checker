@@ -1,0 +1,43 @@
+<html>
+<head>
+  <head>
+    <title>MS Config Checker</title>
+      <link rel="icon" href="/static/Ms_icon.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/format.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Proxima+Nova">
+    </head>
+<body>
+  <div id ="content" style="text-align:left;" class="container">
+      <form id="loginForm" method="GET" action="/" style="font-family: 'Proxima Nova', serif; font-size:8pt" >
+        <p style="text-align:center;"><a href="https://meraki.cisco.com/products/switches/" target="_blank">
+        <img class="container" src="/static/Ms_icon.png" style="padding:20px; width:20%;">
+        </a></p>
+
+        <p style="font-family: 'Proxima Nova', serif; font-size:15pt;text-align:center;"> Based on the configuration file uploaded, below are the features configured with Meraki recommendations </p>
+        <table style="font-family: 'Proxima Nova', serif;" cellpadding = "5" cellspacing = "10">
+          <td style="font-size:15pt;"><b/>Feature</td>
+          <td style="padding-left: 70px;font-size:15pt;"><b/>Available</td>
+          <td style="padding-left: 70px;font-size:15pt; text-align:center;"><b/>Notes</td>
+        {% for data in can_list %}
+        <tr>
+          <td "font-family: 'Proxima Nova', serif; font-size:12pt;">  <p><label>{{data}} </label></td>
+          <td style="padding-left: 70px; text-align:center;">  <span style="color:MediumSeaGreen;">&#10003;</span></td>
+        </tr>
+        {% endfor %}
+
+        {% for key, value in not_list.items() %}
+        <tr>
+          <td>  <p><label>{{key}} </label> </td>
+          <td style="padding-left: 80px; text-align:center;"> <span style="color:Orange;">	&#33;</span></td>
+          <td style="font-family: 'Proxima Nova', serif; font-size:8pt; padding-left: 70px; text-align:left;"> <a href='{{value}}' target="_blank">{{more[key]}}</a></td>
+        </tr>
+        {% endfor %}
+        </table>
+        <br/>
+          <div id="nothing" style="text-align:center;" class="container">
+            <button type="submit">Back</button>
+          </div>
+        </form>
+      </div>
+  </body>
+</html>

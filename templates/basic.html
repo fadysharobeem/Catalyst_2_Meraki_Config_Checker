@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>MS Config Checker</title>
+    <link rel="icon" href="/static/Ms_icon.png" type="image/png" sizes="16x16">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style/format.css') }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Proxima+Nova">
+  </head>
+
+<body>
+  <div id ="content" style="text-align:center;" class="container">
+  <form  method="POST" action="/Result_config_checker" enctype="multipart/form-data" id="loginForm" style="font-family: 'Proxima Nova', serif; font-size:13pt" >
+    <p><a href="https://meraki.cisco.com/products/switches/" target="_blank">
+    <img src="/static/Ms_icon.png" style="padding:20px; width:20%;">
+    </a></p>
+    <p style="font-family: 'Proxima Nova', serif; font-size:17pt;text-align:center;"><b>Config Check Tool</b></p>
+    <br>Upload the "show running-config" file of the Catalyst switch in txt format<input type="file" name="file" style="text-align:center;" required></input></br>
+    <div id="nothing" style="text-align:center;" class="container">
+      <button  type="submit">Check Configuration</button>
+      <p style="font-family: 'Proxima Nova', serif; font-size:6pt">* Use this tool for guidance only. Its recommended to reach out to a Cisco Meraki expert to verify your needs.</p>
+    </div>
+</form>
+</div>
+
+</body>
+</html>
