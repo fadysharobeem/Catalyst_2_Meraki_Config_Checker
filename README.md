@@ -48,9 +48,12 @@ Below is the list of configuration the tool can read at this stage
 <Put the photo of High Level Diagram>
   
 The script will parse the Cisco Catalyst configuration txt file and read the above-listed configuration, then save it in a dictionary. 
-<Put a photo of UI of entering >
+
+![](static/Upload_Cat_Config_UI.png)
   
 The script will also call the updated list of features that Meraki currently not supporting via a get request against http://msfeatures.netdecorators.com:7900/. 
+
+![](static/Sample_Check_Result_UI.png)
 
 The user will get an outcome page with the features currently supported by Meraki MS and the features that might not be needed to configure, and the features currently not supported by Meraki switches.
 
