@@ -76,3 +76,7 @@ The user will get an outcome page with the features currently supported by Merak
 ### Use
 
 From any browser enter http://ip_address:5000 or http://localhost:5000
+
+### Demo
+
+You can check the app here -> https://check.netdecorators.com/read
